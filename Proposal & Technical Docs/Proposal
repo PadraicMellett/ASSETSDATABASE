@@ -6,7 +6,8 @@ Mathias Morgan
 Proposal: To optimise the portfolio of the Morgan & Mellett Pension fund the head fund manager has tasked the data engineering team to create a fully functioning data base of three major asset classes for the purposed of further data analytics to assist with data driven asset allocation decisions.
 
 Parameters:
-o	Data will take analysed over 30 years utilising MONTHLY price closes across all asset classes
+o	Data will take analysed over 40 years utilising MONTHLY price closes across all asset classes
+o	All Prices are in US Dollars
 
 -	S&P500 
 
