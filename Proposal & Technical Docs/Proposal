@@ -1,13 +1,13 @@
-ETL Project Proposal
+# ETL Project Proposal
 
-Padraic Mellett
-Mathias Morgan
+* Padraic Mellett
+* Mathias Morgan
 
 Proposal: To optimise the portfolio of the Morgan & Mellett Pension fund the head fund manager has tasked the data engineering team to create a fully functioning data base of three major asset classes for the purposed of further data analytics to assist with data driven asset allocation decisions.
 
-Parameters:
-o	Data will take analysed over 40 years utilising MONTHLY price closes across all asset classes
-o	All Prices are in US Dollars
+# Parameters:
+*	Data will take analysed over 40 years utilising MONTHLY price closes across all asset  classes
+*	All Prices are in US Dollars
 
 -	S&P500 
 
@@ -15,26 +15,26 @@ o	All Prices are in US Dollars
 
 -	Gold/USD
 
-Data Sources:
--	CSV
+# Data Sources:
+- CSV
 - JSON
 
-Workflow Plan
+# Workflow Plan
  
-Tuesday
+# Tuesday
 -	Proposal formation
 -	Concept Development
 -	Finding potential datasets
-Wednesday
+# Wednesday
 -	Arranging data by time/date to ensure consistency across data sets
 -	Creating databases on SQL
 -	Mapping out syntax & workflow 
-Thursday
+# Thursday
 -	Create initial code
 -	Develop Schema
 -	Develop databases
 
-Friday – Sunday
+# Friday – Sunday
 -	Create Technical Document write through instructions and processes
 -	Finalise Database structure
 -	Finalise documents for submission
