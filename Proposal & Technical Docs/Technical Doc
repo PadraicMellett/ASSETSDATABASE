@@ -1,1 +1,26 @@
+# ETL PROJECT – Technical Document
 
+The purpose of this document is to describe the technical aspects of the Extraction, Transformation and Loading (ETL) process the data engineering department of the Morgan & Mellet Pension Fund undertook to provide the data analyst department with a fully functioning data base comprising of relevant timer series data on the asset classes as mentioned in proposal.
+
+Regarding the four asset classes analysed, to demonstrate diversity in our data types, two JSON and two CSV files were taken as raw data, allocated as follows:
+
+* Gold - JSON
+* Silver - CSV
+* 10 year treasury bonds - JSON
+* S&P 500 – CSV
+
+# Extract
+*	On a Jupyter Notebook (“The Notebook”) each asset was read in and imported into The Notebook then loaded into a data frame (using the pandas library) from using a json or csv reader, with a unique variable created for each.
+*	For each data set, the relevant “Price” and “Date” columns were present in the data frames. The exception to this is the 10 year treasury bond data set where “Rate” instead of “price” was the relevant column of data used.
+
+# Transform
+*	After the data was loaded into data frames with the relevant data displayed, all data frames were indexed by “Date”, this was appropriate because we were using time series data.
+*	The Silver data set required further cleaning with the “Open”, “High”, “Low” and “Change %” columns removed in place of “Date” and “Price”. As the future analysis will only require those two variables.
+*	“df.dtypes” commands were conducted on the “Date” columns to determine how pandas would read the dates. After it was determined that Pandas was reading the “Date” columns as objects we transformed these columns into “datetime” types for consistency and to avoid errors when querying our data later in SQL. To achieve this, we used the “to_datetime” python commands in the Notebook.
+*	A PostgreSQL (“SQL”) Schema was created in PGAdmin4 which created the databases with unique the id columns as the primary key. The SQL command being “id Serial Primary Key”. The other columns were named as per the columns in the pandas data frames for consistency; “Date”, “Price” and “Rate” (for the 10 year treasury bond data). The SQL database created was named “asset_db”.
+
+# Load
+*	After the creation of the SQL Schema as mentioned above, a connection to PostgreSQL was creation in The Notebook by creating an engine to run in Python.
+*	The tables were then queried to ensure the tables were present in the data set.
+*	The query after running engine.table_names() returned; “silver”, “gold”, “sp500” and “tenyear_bill” corresponding to the data frames as created above.
+*	Data was then imported into the database as required by appending the necessary pandas tables into the SQL database (asset_db).
